@@ -1,0 +1,48 @@
+<div class="container-fluid coursesComponent">
+    <div class="row">
+        <div class="coursesCategory">
+            <h1 class="container">Category Selected</h1>
+        </div>
+        <div class="container coursesCarousel">
+            <ul class="row ">
+                <a class="btn btn-default" routerLink="/most-popular">
+                    Most Popular
+                </a>
+                <a class="btn btn-default" routerLink="/trending">
+                    Trending
+                </a>
+            </ul>
+            <ul class="row carouselItems">
+                <div class="col carouselItem" *ngFor="let course of courses">
+                    <a routerLink="/courses">
+                        <div class="card">
+                            <img [src]="course.imgUrl" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ course.name }}</h5>
+                                <p class="card-text">Author</p>
+                                <p class="card-text">Rating</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 all-courses">
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <img src="../../assets/image-1.png" alt="">
+                            </div>
+                            <div class="col-xs-10">Details</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

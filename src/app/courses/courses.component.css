@@ -1,0 +1,68 @@
+.coursesComponent {
+    margin-top: 50px;
+    /* background-color: #fff; */
+}
+
+.coursesCategory {
+    padding: 0;
+    min-height: 103px;
+    width: 100%;
+    background: #626262;
+}
+
+.coursesCategory h1 {
+    margin: 20px auto;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 36px;
+    font-weight: lighter;
+    color: white;
+}
+
+ul {
+    margin: 0;
+    padding-left: 0;
+}
+
+a.btn-default.active {
+    border-bottom: 2px solid blue;
+}
+
+.carouselItem {
+    height: 100%;
+    min-width: 216px;
+    padding-left: 0;
+}
+
+.carouselItem a, .carouselItem a:hover {
+    min-width: 216px;
+    text-decoration: none;
+    cursor: pointer;
+    color: #29303b;
+}
+
+.carouselItem img {
+    margin: 0;
+    max-width: 216px;
+    max-height: 200px;
+    padding: 0;
+}
+
+ul {
+    /* text-align: center; */
+}
+
+img {
+    max-width: 200px;
+    max-height: 200px;
+    padding: 0;
+}
+
+.card h3 {
+
+}
+
+.filter-panel {
+
+}
+  
