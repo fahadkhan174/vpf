@@ -29,18 +29,24 @@
         </form>
 
         <ul class="navbar-nav my-2 my-lg-0">
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/login">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/login?register=true">Register</a>
-            </li>
-            <li class="nav-item dropdown" dropdownDirective>
-                <a class="nav-link"><i class="fa fa-user-o" aria-hidden="true"></i> Actions</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item">Username</a>
-                </div>
-            </li>
+            <ng-container *ngIf="(!(isAuthenticated$ | async)); else userActions">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/login?register=true">Register</a>
+                </li>
+            </ng-container>
+
+            <ng-template #userActions >
+                <li class="nav-item dropdown" dropdownDirective>
+                    <a class="nav-link">
+                        <i class="fa fa-user-o" aria-hidden="true"></i> Username</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" (click)="logout()">Logout</a>
+                    </div>
+                </li>
+            </ng-template>
         </ul>
     </div>
 </nav>

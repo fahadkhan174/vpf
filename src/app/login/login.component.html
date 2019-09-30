@@ -6,13 +6,13 @@
                     <div>
                         <img src="../../assets/image-1.png" alt="" class="image-1">
                         <div *ngIf="loginPage; else registerForm">
-                            <form>
+                            <form #loginForm="ngForm" (ngSubmit)=loginFormSubmit(loginForm.value)>
                                 <h3>LOGIN</h3>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Email">
+                                    <input type="email" [(ngModel)]="email" name="email" class="form-control" placeholder="Email">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Password">
+                                    <input type="password" [(ngModel)]="password" name="password" class="form-control" placeholder="Password">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>

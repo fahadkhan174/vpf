@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
@@ -15,6 +16,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopicsComponent } from './topics/topics.component';
 import { CoursesComponent } from './courses/courses.component';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { CoursesComponent } from './courses/courses.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule,
     BrowserAnimationsModule
   ],
