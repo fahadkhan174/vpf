@@ -18,25 +18,26 @@ import { TopicsComponent } from './topics/topics.component';
 import { CoursesComponent } from './courses/courses.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    BsNavbarComponent,
-    ChatroomComponent,
-    LoginComponent,
-    HomeComponent,
-    UserComponent,
-    DropdownDirective,
-    TopicsComponent,
-    CoursesComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-      FormsModule
-  ],
-  providers: [ AuthService],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        BsNavbarComponent,
+        ChatroomComponent,
+        LoginComponent,
+        HomeComponent,
+        UserComponent,
+        DropdownDirective,
+        TopicsComponent,
+        CoursesComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        FormsModule
+    ],
+    providers: [AuthService],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

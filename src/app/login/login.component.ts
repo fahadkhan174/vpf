@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Location} from '@angular/common';
 import { AbstractControl } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { AuthService } from '../auth.service';
 import { Subscription } from 'rxjs';
@@ -16,8 +16,8 @@ export class LoginComponent implements OnInit {
     
     sub: Subscription;
 
-  constructor(private _location: Location, private authService: AuthService, private router: Router) { }
-
+  constructor(private _location: Location, private authService: AuthService, private router: Router, private route: ActivatedRoute) { }
+    
   ngOnInit() {
       this.sub = this.route
       .data
