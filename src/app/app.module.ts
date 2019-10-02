@@ -16,6 +16,9 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopicsComponent } from './topics/topics.component';
 import { CoursesComponent } from './courses/courses.component';
+import { AngularMaterialModule } from './shared/angular-material.module';
+import { AdminComponent } from './admin/admin.component';
+import { AuthGuardService } from './auth-guard.service';
 
 
 @NgModule({
@@ -28,16 +31,18 @@ import { CoursesComponent } from './courses/courses.component';
     UserComponent,
     DropdownDirective,
     TopicsComponent,
-    CoursesComponent
+    CoursesComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularMaterialModule
   ],
-  providers: [ AuthService],
+  providers: [ AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
