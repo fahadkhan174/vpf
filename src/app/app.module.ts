@@ -16,6 +16,8 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopicsComponent } from './topics/topics.component';
 import { CoursesComponent } from './courses/courses.component';
+import { CourseComponent } from './course/course.component';
+import { MiniNavComponent } from './mini-nav/mini-nav.component';
 
 @NgModule({
     declarations: [
@@ -27,7 +29,9 @@ import { CoursesComponent } from './courses/courses.component';
         UserComponent,
         DropdownDirective,
         TopicsComponent,
-        CoursesComponent
+        CoursesComponent,
+        CourseComponent,
+        MiniNavComponent
     ],
     imports: [
         BrowserModule,
