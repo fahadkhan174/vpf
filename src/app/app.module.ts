@@ -16,8 +16,11 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopicsComponent } from './topics/topics.component';
 import { CoursesComponent } from './courses/courses.component';
-import { CourseComponent } from './course/course.component';
+import { AngularMaterialModule } from './shared/angular-material.module';
+import { AdminComponent } from './admin/admin.component';
+import { AuthGuardService } from './auth-guard.service';
 import { MiniNavComponent } from './mini-nav/mini-nav.component';
+import { CourseComponent } from './course/course.component';
 
 @NgModule({
     declarations: [
@@ -30,8 +33,9 @@ import { MiniNavComponent } from './mini-nav/mini-nav.component';
         DropdownDirective,
         TopicsComponent,
         CoursesComponent,
-        CourseComponent,
-        MiniNavComponent
+        AdminComponent,
+        MiniNavComponent,
+        CourseComponent
     ],
     imports: [
         BrowserModule,
@@ -39,9 +43,9 @@ import { MiniNavComponent } from './mini-nav/mini-nav.component';
         FormsModule,
         HttpClientModule,
         BrowserAnimationsModule,
-        FormsModule
+        AngularMaterialModule
     ],
-    providers: [AuthService],
+    providers: [AuthService, AuthGuardService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

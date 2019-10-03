@@ -5,7 +5,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { AuthService } from '../auth.service';
 import { Subscription } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, first } from 'rxjs/operators';
+import { User } from '../model/user.model';
 
 @Component({
     selector: 'app-login',
@@ -14,9 +15,12 @@ import { map } from 'rxjs/operators';
 })
 export class LoginComponent implements OnInit, OnDestroy {
     loginPage: boolean;
-
+    user: User;
     // sub: Subscription;
     loginPageSub: Subscription;
+    returnUrl: string;
+    error: string = '';
+    
     constructor(
         private _location: Location,
         private authService: AuthService,
@@ -28,23 +32,30 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.loginPageSub = this.route.queryParams.subscribe(params => {
             this.loginPage = JSON.parse(params['loginPage']);
         });
-        
+
         // to get data from route defined in routing modules
         // this.sub = this.route.data.subscribe(v => console.log(v));
-    }
 
-    toggleForm() {
-        this.loginPage = !this.loginPage;
+        this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/';
+        localStorage.setItem('returnUrl', this.returnUrl);
     }
 
     backClicked() {
         this._location.back();
     }
 
-    loginFormSubmit(loginFormData: AbstractControl) {
-        console.log(loginFormData);
-        this.authService.login();
-        this.router.navigate(['/']);
+    loginFormSubmit(form: AbstractControl) {
+        this.authService
+            .login(form['email'], form['password'])
+            .pipe(first())
+            .subscribe(
+                data => {
+                    this.router.navigate([this.returnUrl]);
+                },
+                error => {
+                    this.error = error;
+                }
+            );
     }
 
     ngOnDestroy() {

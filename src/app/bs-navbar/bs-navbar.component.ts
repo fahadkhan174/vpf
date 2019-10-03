@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+
+
 import { AuthService } from '../auth.service';
 import { TopicsService } from '../topics/topics.service';
+import { User } from '../model/user.model';
+import { Observable } from 'rxjs'; 
 
 @Component({
     selector: 'bs-navbar',
@@ -8,13 +12,8 @@ import { TopicsService } from '../topics/topics.service';
     styleUrls: ['./bs-navbar.component.css']
 })
 export class BsNavbarComponent implements OnInit {
-    user: {
-        name: string;
-    };
-
     topics: any[] = [];
-
-    isAuthenticated$: any;
+    currentUser: User;
 
     constructor(private authService: AuthService, private topicsService: TopicsService) {}
 
@@ -24,7 +23,9 @@ export class BsNavbarComponent implements OnInit {
         // });
 
         this.topics = this.topicsService.topics;
-        this.isAuthenticated$ = this.authService.isAuthenticated;
+        this.authService.currentUser$.subscribe( data => {
+            this.currentUser = data;
+        });
     }
     
     logout() {

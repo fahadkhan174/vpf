@@ -1,0 +1,36 @@
+<div class="container main-wrapper">
+    <div class="row">
+        <div class="col-2">
+            <div class="form-control-group">
+                <input type="text" class="form-control" name="filter" placeholder="filter courses...">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10">
+            <hr>
+            <div class="filtered-container">
+                <div>
+                    <table class="table">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Author</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let course of courses">
+                                <th scope="row">{{ course.id}}</th>
+                                <td>{{ course.title }}</td>
+                                <td>{{ course.author }}</td>
+                                <td><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

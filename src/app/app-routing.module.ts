@@ -5,20 +5,28 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import { CoursesComponent } from './courses/courses.component';
-
+import { AuthGuardService } from './auth-guard.service';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
-  {
-    path: '', component: HomeComponent, children: [
-      { path: 'courses', component: CoursesComponent },
-      { path: 'user', component: UserComponent }
-    ]
-  },
-  { path: 'login', component: LoginComponent }
+    {
+        path: '',
+        component: HomeComponent,
+        children: [
+            { path: 'courses/:topic', component: CoursesComponent },
+            { path: 'user', component: UserComponent },
+            {
+                path: 'admin',
+                canActivate: [AuthGuardService],
+                component: AdminComponent
+            }
+        ]
+    },
+    { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
