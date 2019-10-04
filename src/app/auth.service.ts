@@ -4,19 +4,20 @@ import { Observable, Subject, BehaviorSubject, of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from './model/user.model';
 
-
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService {
     private currentUserSubject: BehaviorSubject<User>;
-    public currentUser$: Observable<User>; 
+    public currentUser$: Observable<User>;
 
-    users: User[] = [ new User( 'a', 'a'), new User( 'a1', 'a1')];
+    users: User[] = [new User('a', 'a'), new User('a1', 'a1')];
     user: User;
 
     constructor(private http: HttpClient, private router: Router) {
-        this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
+        this.currentUserSubject = new BehaviorSubject<User>(
+            JSON.parse(localStorage.getItem('currentUser'))
+        );
         this.currentUser$ = this.currentUserSubject.asObservable();
     }
 
@@ -32,23 +33,24 @@ export class AuthService {
         //         this.currentUserSubject.next(user);
         //         return user;
         //     }));
-        
-        
-        this.user = this.users.find( p => (p.email === username && p.password === password));
-        
-        if(this.user != undefined) {
-            localStorage.setItem('currentUser', JSON.stringify(this.user));
-                this.currentUserSubject.next(this.user);
-                return this.currentUser$;
-        }
 
+        this.user = this.users.find(p => p.email === username && p.password === password);
+
+        if (this.user != undefined) {
+            localStorage.setItem('currentUser', JSON.stringify(this.user));
+            this.currentUserSubject.next(this.user);
+            return this.currentUser$;
+        } else {
+            localStorage.setItem('currentUser', JSON.stringify(''));
+            this.currentUserSubject.next(null);
+            return this.currentUser$;
+        }
     }
 
-     logout() {
+    logout() {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
         this.currentUserSubject.next(null);
-         this.router.navigate(['/']);
+        this.router.navigate(['/']);
     }
-
 }

@@ -50,12 +50,18 @@ export class LoginComponent implements OnInit, OnDestroy {
             .pipe(first())
             .subscribe(
                 data => {
-                    this.router.navigate([this.returnUrl]);
+                    if(data != null) {
+                        this.router.navigate([this.returnUrl]);
+                    }
                 },
                 error => {
                     this.error = error;
                 }
             );
+    }
+    
+    toggleForm() {
+        this.loginPage =!this.loginPage;
     }
 
     ngOnDestroy() {
