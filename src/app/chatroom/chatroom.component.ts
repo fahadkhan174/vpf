@@ -15,7 +15,6 @@ export class ChatroomComponent implements OnInit {
   }
 
   toggleChatroom() {
-    console.log('Expand event triggered');
     this.openChat = !this.openChat;
 	}
 

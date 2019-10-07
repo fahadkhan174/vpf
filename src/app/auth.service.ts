@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject, BehaviorSubject, of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -7,7 +7,7 @@ import { User } from './model/user.model';
 @Injectable({
     providedIn: 'root'
 })
-export class AuthService {
+export class AuthService implements OnInit {
     private currentUserSubject: BehaviorSubject<User>;
     public currentUser$: Observable<User>;
 
@@ -19,6 +19,10 @@ export class AuthService {
             JSON.parse(localStorage.getItem('currentUser'))
         );
         this.currentUser$ = this.currentUserSubject.asObservable();
+    }
+
+    ngOnInit() {
+
     }
 
     public get currentUserValue(): User {
@@ -38,13 +42,9 @@ export class AuthService {
 
         if (this.user != undefined) {
             localStorage.setItem('currentUser', JSON.stringify(this.user));
-            this.currentUserSubject.next(this.user);
-            return this.currentUser$;
-        } else {
-            localStorage.setItem('currentUser', JSON.stringify(''));
-            this.currentUserSubject.next(null);
-            return this.currentUser$;
         }
+        this.currentUserSubject.next(this.user);
+        return this.currentUser$;
     }
 
     logout() {

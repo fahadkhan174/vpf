@@ -44,7 +44,7 @@
             <ng-template #userActions>
                 <li class="nav-item dropdown" dropdownDirective>
                     <a class="nav-link">
-                        <i class="fa fa-user-o" aria-hidden="true"></i> {{ currentUser.email }}</a>
+                        <i class="fa fa-user-o" aria-hidden="true"></i> {{ currentUser._email }}</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" routerLink="/admin">Admin</a>
                         <a class="dropdown-item" (click)="logout()">Logout</a>
