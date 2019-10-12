@@ -7,12 +7,14 @@ import { UserComponent } from './user/user.component';
 import { CoursesComponent } from './courses/courses.component';
 import { AuthGuardService } from './auth-guard.service';
 import { AdminComponent } from './admin/admin.component';
+import { CourseComponent } from './course/course.component';
 
 const routes: Routes = [
     {
         path: '',
         component: HomeComponent,
         children: [
+            { path: 'course/:course_id', component: CourseComponent },
             { path: 'courses/:topic', component: CoursesComponent },
             { path: 'user', component: UserComponent },
             {

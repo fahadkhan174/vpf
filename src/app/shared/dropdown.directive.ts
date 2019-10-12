@@ -18,7 +18,7 @@ export class DropdownDirective {
 		setTimeout(() => {
 			this.isOpen = false;
 			this._el.nativeElement.querySelector('.dropdown-menu').classList.toggle('show');
-		}, 1000);
+		}, 500);
 	}
 
 }

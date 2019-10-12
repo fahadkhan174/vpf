@@ -30,6 +30,7 @@ a.btn-default.active {
 
 .carouselItem {
     height: 100%;
+    min-height: 290px;
     min-width: 216px;
     max-width: 216px;
     padding-left: 0;
@@ -53,5 +54,38 @@ img {
     max-width: 200px;
     max-height: 200px;
     padding: 0;
+}
+
+p.card-title, p.card-text {
+    color: #686f7a;
+}
+
+p.card-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #29303b;
+}
+
+p.card-text {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+div.rating {
+    position: relative;
+    display: inline-block;
+}
+
+.fa.fa-star {
+    margin-right: 0.2rem;
+    font-size: 13px;
+}
+
+.unfilled {
+    color: #dedfe0;
+}
+
+.filled {
+    color: #f4c150;
 }
   

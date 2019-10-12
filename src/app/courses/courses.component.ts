@@ -24,7 +24,7 @@ export class CoursesComponent implements OnInit, OnDestroy {
 
       setTimeout(() => {
         this.courses = this.coursesService.courses.filter(course => course.topics.indexOf(this.topic.title) >= 0);
-      }, 1000);
+      }, 300);
     });
   }
 

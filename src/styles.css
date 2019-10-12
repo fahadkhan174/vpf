@@ -12,3 +12,9 @@ body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+a, a:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: #29303b;
+}
