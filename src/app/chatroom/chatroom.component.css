@@ -1,3 +1,4 @@
+
 .chatroom-svg {
 	position: fixed;
 	top: 90%;
@@ -11,7 +12,8 @@
     position: fixed;
     bottom: 10%;
     right: 2%;
-    border: 1px thin red;
+    background-color: #e7f9fc;
+    border-radius: 2px;
     padding: 5px;
 }
 
