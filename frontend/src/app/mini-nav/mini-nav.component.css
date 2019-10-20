@@ -1,0 +1,15 @@
+.mini-nav {
+    min-height: 50px;
+}
+
+li.nav-item {
+    margin-top: 5px;
+}
+
+.nav-link {
+    padding-right: 0;
+}
+
+li.nav-item a.nav-link span {
+    margin-left: 1rem;
+}

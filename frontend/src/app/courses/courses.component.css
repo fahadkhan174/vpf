@@ -1,0 +1,91 @@
+/* .coursesComponent {
+    margin-top: 50px;
+    background-color: #fff;
+} */
+
+.coursesCategory {
+    padding: 0;
+    min-height: 103px;
+    width: 100%;
+    background: #626262;
+}
+
+.coursesCategory h1 {
+    margin: 20px auto;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 36px;
+    font-weight: lighter;
+    color: white;
+}
+
+ul {
+    margin: 0;
+    padding-left: 0;
+}
+
+a.btn-default.active {
+    border-bottom: 2px solid blue;
+}
+
+.carouselItem {
+    height: 100%;
+    min-height: 290px;
+    min-width: 216px;
+    max-width: 216px;
+    padding-left: 0;
+}
+
+.carouselItem a, .carouselItem a:hover {
+    min-width: 216px;
+    text-decoration: none;
+    cursor: pointer;
+    color: #29303b;
+}
+
+.carouselItem img {
+    margin: 0;
+    max-width: 216px;
+    max-height: 200px;
+    padding: 0;
+}
+
+img {
+    max-width: 200px;
+    max-height: 200px;
+    padding: 0;
+}
+
+p.card-title, p.card-text {
+    color: #686f7a;
+}
+
+p.card-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #29303b;
+}
+
+p.card-text {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+div.rating {
+    position: relative;
+    display: inline-block;
+}
+
+.fa.fa-star {
+    margin-right: 0.2rem;
+    font-size: 13px;
+}
+
+.unfilled {
+    color: #dedfe0;
+}
+
+.filled {
+    color: #f4c150;
+}
+  

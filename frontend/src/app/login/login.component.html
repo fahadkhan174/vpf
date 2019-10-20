@@ -1,0 +1,63 @@
+<div class="register-page">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-8 col-sm-8 col-xs-4">
+                <div class="inner">
+                    <div>
+                        <img src="../../assets/image-1.png" alt="" class="image-1">
+                        <div *ngIf="loginPage; else registerForm">
+                            <form #loginForm="ngForm" (ngSubmit)=loginFormSubmit(loginForm.value)>
+                                <h3>LOGIN</h3>
+                                <div class="form-group">
+                                    <input type="email" [(ngModel)]="email" name="email" class="form-control"
+                                        placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" [(ngModel)]="password" name="password" class="form-control"
+                                        placeholder="Password">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                            <i class="fa" aria-hidden="true" (click)="toggleForm()">
+                                <p>Register New</p>
+                            </i>
+                            <i class="fa go-back" aria-hidden="true" (click)="backClicked()">
+                                <p>Go Back</p>
+                            </i>
+                        </div>
+
+                        <ng-template #registerForm>
+                            <div>
+                                <form>
+                                    <h3>NEW ACCOUNT?</h3>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Username">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Phone Number">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" placeholder="Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" placeholder="Password">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+                                <i class="fa" aria-hidden="true" (click)="toggleForm()">
+                                    <p>Login Instead</p>
+                                </i>
+                                <i class="fa go-back" aria-hidden="true" (click)="backClicked()">
+                                    <p>Go Back</p>
+                                </i>
+                            </div>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

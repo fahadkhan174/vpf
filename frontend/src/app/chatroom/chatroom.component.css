@@ -1,0 +1,24 @@
+
+.chatroom-svg {
+	position: fixed;
+	top: 90%;
+	right: 2%;
+	height: 2.5rem;
+	width: 2.5rem;
+	cursor: pointer;
+}
+
+.chatroom-form {
+    position: fixed;
+    bottom: 10%;
+    right: 2%;
+    background-color: #e7f9fc;
+    border-radius: 2px;
+    padding: 5px;
+}
+
+.fa.fa-times{
+    position: fixed;
+    right: 2%;
+    cursor: pointer;
+}
